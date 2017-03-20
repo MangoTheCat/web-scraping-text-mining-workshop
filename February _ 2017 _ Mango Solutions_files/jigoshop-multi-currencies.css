@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+
+.jigoshop_multi_currencies .select input,
+.jigoshop_multi_currencies .select select {
+	height: 25px;
+	float: left;
+}
+
+.jigoshop_multi_currencies .radio li {
+	list-style-type: none;
+}
+
+.multi_currencies_exchange_table_widget {
+	width: 100%;
+  border-width: 0px;
+  border-spacing: 1px;
+  border-collapse: collapse;
+}
+
+.multi_currencies_exchange_table_widget td {
+  border-width: 1px;
+  padding: 2px 5px;
+  border-style: dotted;
+  border-color: gray;
+}

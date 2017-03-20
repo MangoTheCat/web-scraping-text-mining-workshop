@@ -1,0 +1,29 @@
+jQuery(document).ready(function(){
+  if(typeof multiCountryCurrencyField != 'undefined'){
+    if(multiCountryCurrencyField == 'shipping'){
+      multiCountryCurrencyCheck('#shipping-country');
+    } else {
+      multiCountryCurrencyCheck('#billing-country');
+    }
+  }
+});
+
+function multiCountryCurrencyCheck(field){
+  jQuery(field).change(function(){
+    if(jQuery.inArray(jQuery(this).val(), multiCountryCurrency.pairs[multiCountryCurrencyCurrent]) == -1){
+      var availableCurrency = multiCountryCurrency.default;
+      for(var currency in multiCountryCurrency.pairs){
+        if(jQuery.inArray(jQuery(this).val(), multiCountryCurrency.pairs[currency]) != -1){
+          availableCurrency = currency;
+          break;
+        }
+      }
+
+      if(multiCountryCurrencyCurrent != availableCurrency){
+        alert(multiCountryCurrencyMessage+availableCurrency+'.');
+      }
+    }
+  });
+
+  jQuery(field).change();
+}

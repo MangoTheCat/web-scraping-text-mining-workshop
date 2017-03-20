@@ -1,0 +1,135 @@
+.barclaycardcw-control-group {
+	margin-bottom: 15px;
+}
+
+.barclaycardcw-control-label {
+	font-size: 14px;
+	display: inline-block;
+	padding: 6px 15px;
+	width: 120px;
+	font-size: 14px;
+	text-align: right;
+	float: left;
+}
+.barclaycardcw-control-label .barclaycardcw-required {
+	color: #990000;
+}
+
+.barclaycardcw-control-group > .barclaycardcw-controls {
+	margin-left: 140px;
+}
+ul.payment_methods .barclaycardcw-control-group > .barclaycardcw-controls {
+	margin-left: 140px;
+}
+
+.barclaycardcw-description {
+	margin-left: 140px;
+}
+
+.barclaycardcw-error {
+	margin-left: 140px;
+	color: #D8000C;
+}
+
+.barclaycardcw-element-error input[type='text'], .barclaycardcw-element-error input[type='password'], .barclaycardcw-element-error select{
+	border-color: #D8000C;
+}
+
+.barclaycardcw-card-cvc input[type='text']{
+	width: 60px;
+}
+
+.barclaycardcw-multi-control .barclaycardcw-controls { 
+	display: inline-block;
+}
+
+.barclaycardcw-multi-control {
+	overflow: auto;
+}
+.barclaycardcw-payment-form-confirm {
+	margin-left: 140px;
+}
+
+
+.barclaycardcw-iframe {
+	height: 525px;
+	width: 100%;
+	border: none;
+}
+
+.barclaycardcw-widget {
+	height: 525px;
+	width: 100%;
+	border: none;
+}
+
+
+.barclaycardcw-alias-input-box {
+	margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+.card-brand-image-box {
+	display: inline-block;
+}
+
+
+.card-brand-image-color.brand-is-deselected {
+	display:none;
+}
+
+.card-brand-image-grey.brand-is-selected {
+	display:none;
+}
+
+.entry-content .card-brand-image-selection img,  .card-brand-image-selection img {
+	width:auto;
+	height: 25px;
+	padding-right: 4px;
+	padding-bottom: 4px;
+	margin: 0 .5em 0 0;
+}
+
+.invalid-card-number, .invalid-card-number:focus, .invalid-cvc-number, .invalid-cvc-number:focus , .invalid-issuer-number, .invalid-issuer-number:focus {
+	border-color: #fb7f88;
+	background-image: url(../image/invalid.png);
+	background-position: 95% center;
+	background-repeat: no-repeat;
+}
+
+.valid-card-number, .valid-card-number:focus, .valid-cvc-number, .valid-cvc-number:focus, .valid-issuer-number, .valid-issuer-number:focus {
+	background-image: url(../image/valid.png);
+	background-position: 95% center;
+	background-repeat: no-repeat;
+}
+
+.barclaycardcw-multi-control .barclaycardcw-select-field select{
+	margin-right: 1em;
+}
+
+.barclaycardcw-card-number .barclaycardcw-multi-control select{
+	float: none;
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+}
+
+.card-brand-image-selection {
+	margin-top: 0.5em;
+	cursor: pointer;
+}
+
+.barclaycardcw-card-number .barclaycardcw-html-field {
+	display:block;
+}
+
+.barclaycardcw-back-to-checkout {
+	margin-top: 10px;
+	font-size: small;
+}
+

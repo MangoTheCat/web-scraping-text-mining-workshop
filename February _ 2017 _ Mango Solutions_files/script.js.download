@@ -1,0 +1,94 @@
+/*
+	Any site-specific scripts you might have.
+	Note that <html> innately gets a class of "no-js".
+	This is to allow you to react to non-JS users.
+	Recommend removing that and adding "js" as one of the first things your script does.
+	Note that if you are using Modernizr, it already does this for you. :-)
+*/
+
+jQuery(document).ready(function($) {
+
+  $('#main-carousel').scrollable({circular:true});
+  $('#carousel-detail-items .items div:first').addClass('active');
+  var i = 0;
+  var interval = setInterval(function(){
+    if($("#carousel-detail-items .items div.active").is(':last-child')){   
+         var item_prev = $('#carousel-detail-items .items div.active').attr('class');
+        item_prev = item_prev.replace(' active', '');
+        $('#main-carousel .items-wrapper .spacer .items div.page').not('.cloned').find('div.'+item_prev).removeClass('bkg');
+        $("#carousel-detail-items .items div.active").removeClass('active').show().fadeOut(2000);
+        $("#carousel-detail-items .items div:first").addClass('active').hide().fadeIn(2000); 
+        var item = $('#carousel-detail-items .items div.active').attr('class');
+        item = item.replace(' active', '');
+        //console.log(item);
+         $('#main-carousel .items-wrapper .spacer .items div.page').not('.cloned').find('div.'+item).addClass('bkg');
+         $('a.next').trigger('click');
+         i = 0;
+
+    }
+    else{
+      var item_prev = $('#carousel-detail-items .items div.active').attr('class');
+      item_prev = item_prev.replace(' active', '');
+      $('#main-carousel .items-wrapper .spacer .items div.page').not('.cloned').find('div.'+item_prev).removeClass('bkg');  
+      $('#carousel-detail-items .items div.active').removeClass('active').show().fadeOut(2000).next().addClass('active').hide().fadeIn(2000);
+      var item = $('#carousel-detail-items .items div.active').attr('class');
+      item = item.replace(' active', '');
+      //console.log(item);
+      $('#main-carousel .items-wrapper .spacer .items div.page').not('.cloned').find('div.'+item).addClass('bkg');
+       i++;
+      if(i%4 == 0){
+        $('a.next').trigger('click');
+      }
+     
+    }
+  }, 10000);
+
+   $('a.next').click(function(event){
+      if (event.originalEvent === undefined) {
+          
+      } else {
+          clearInterval(interval);
+      }
+      
+   });
+   $('a.prev').click(function(){
+      clearInterval(interval);
+   });
+  //$('#carousel-detail-items .items div.active').fadeOut('5000');
+});
+
+(function ($) { 
+
+    // initialize main carousel
+    // $("#main-carousel").scrollable({circular:true}).navigator();
+    // if($("#carousel-detail-items").size()>0){
+    //    $("#carousel-detail-items > div").hide();
+    //    $("#carousel-detail-items > div:first").show(); 
+    // }
+
+    // $("#main-carousel .items .item:first").addClass('active');
+    // $("#main-carousel .items .item a").each(function(){
+
+    //     if($("#carousel-detail-items").size()>0){
+    //        $("#carousel-detail-items div."+$(this).attr('class')+' a').attr('href',$(this).attr('src'));
+           //$(this).attr("href", "javascript:void(0)");
+        // }
+       /* $(this).bind({
+          click: function(){
+            $("#carousel-detail-items > div:visible").fadeOut();
+            $("#carousel-detail-items > div." + $(this).attr('class')).fadeIn();
+            $("#main-carousel .items .item").removeClass('active');
+            $(this).closest('.item').addClass('active');
+          }
+        });*/
+    // });
+
+ 
+    //initialize scrollbars
+    $(".custom-scrollbars").mCustomScrollbar({
+        scrollButtons:{
+            enable:true
+        }
+    });
+    $('input').placeholder();
+})(jQuery)
